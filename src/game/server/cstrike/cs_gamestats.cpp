@@ -314,8 +314,7 @@ void CCSGameStats::UploadRoundStats( void )
 			weaponsStatSubmitTimer.GetDuration().GetMillisecondsF(),
 			submitTimer.GetDuration().GetMillisecondsF(),
 			cleanupTimer.GetDuration().GetMillisecondsF(),
-			iPurchases, iDeathData, iWeaponData, listCount,
-			g_rowCommitTime, g_rowWriteTime);
+			iPurchases, iDeathData, iWeaponData, listCount);
 	}
 }
 
@@ -346,7 +345,7 @@ CON_COMMAND ( teststats, "Test command" )
 		pKV->SetString( "test9", "TEST1234567890TEST1234567890TEST!");*/
 
 		totalTimer.Start();
-		GetSteamWorksSGameStatsUploader().AddStatsForUpload( pKV, args.ArgC() == 1 );
+		//GetSteamWorksSGameStatsUploader().AddStatsForUpload( pKV, args.ArgC() == 1 );
 		totalTimer.End();
 
 		uploadTime += totalTimer.GetDuration().GetMillisecondsF();
