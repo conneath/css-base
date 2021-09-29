@@ -635,7 +635,6 @@ void AddStringDataToKV( KeyValues* pKV, const char* name, const char *data );
 
 #define END_STAT_TABLE() \
 	pKV->SetUint64( ::BaseStatData::m_bUseGlobalData ? "TimeSubmitted" : "SessionTime", ::BaseStatData::TimeSubmitted ); \
-	GetSteamWorksSGameStatsUploader().AddStatsForUpload( pKV ); \
 }
 
 //-----------------------------------------------------------------------------
@@ -704,7 +703,7 @@ public:
 	void SubmitStat( T* pStat )
 	{
 		// Get the static stat table for this type and add the stat to it
-		GetStatTable<T>()->AddToTail( pStat );
+		//GetStatTable<T>()->AddToTail( pStat );
 	}
 
 	//-----------------------------------------------------------------------------
@@ -760,7 +759,7 @@ private:
 			{
 				// Make a copy of the master key value and build the stat table
 				KeyValues *pKVCopy = this->operator [](i)->m_bUseGlobalData ? pKV->MakeCopy() : new KeyValues( "" );
-				this->operator [](i)->BuildGamestatDataTable( pKVCopy );
+				//this->operator [](i)->BuildGamestatDataTable( pKVCopy );
 			}
 
 			// Reset unique ID counter for the stat type
