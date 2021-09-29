@@ -1,8 +1,8 @@
 "GameInfo"
 {
-	game	"My First CSTRIKE Mod"
-	title	"Counter-Strike"
-	title2	"Mod"
+	game	"My First CStrike Mod"
+	title	"COUNTER-STRIKE"
+	title2	"MOD"
 	type multiplayer_only
 	nomodels 0
 	nohimodel 1
